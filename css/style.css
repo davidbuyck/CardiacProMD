@@ -31,14 +31,13 @@ p { margin-bottom: 1rem; }
 }
 /* ====== NAV LINKS ====== */
 .nav-links li a {
-  display: block;           /* make <a> fill its container */
-  padding: 1rem;            /* give it some breathing room */
-  text-align: center;       /* center the text */
+  display: block;
+  padding: 1rem;
+  text-align: center;
   text-decoration: none;
   color: var(--blue);
   font-weight: 600;
 }
-/* CTA button in navbar */
 .btn-cta {
   padding: .5rem 1rem;
   background: #fff;
@@ -51,9 +50,9 @@ p { margin-bottom: 1rem; }
 .nav-toggle {
   background: none;
   border: none;
-  display: none;      /* only shown via media query */
-  cursor: pointer;    /* ensure clickable */
-  z-index: 20;        /* above nav-links */
+  display: none;
+  cursor: pointer;
+  z-index: 20;
 }
 .hamburger,
 .hamburger::before,
@@ -69,14 +68,13 @@ p { margin-bottom: 1rem; }
 .hamburger::after {
   content: "";
   position: absolute;
-  left: 0;            /* align bars flush */
+  left: 0;
 }
 .hamburger::before { top: -8px; }
 .hamburger::after  { top:  8px; }
 
 /* ====== HERO ====== */
 .hero { background: var(--light-bg); text-align: center; padding: 4rem 1rem; }
-/* size of the circle */
 .hero-logo-circle {
   width: 400px;
   height: 400px;
@@ -89,7 +87,6 @@ p { margin-bottom: 1rem; }
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   line-height: 0;
 }
-/* make sure the logo scales to fit */
 .hero-logo-circle .hero-logo {
   max-width: 70%;
   max-height: 70%;
@@ -149,20 +146,18 @@ p { margin-bottom: 1rem; }
 footer {
   background: var(--dark); color: #fff; padding: 1.5rem 0; text-align: center;
 }
-/* Footer logo circle */
 .footer-logo-circle {
   width: 80px;
   height: 80px;
   background: #fff;
   border-radius: 50%;
   display: flex;
-  align-items: center;       /* vertical center */
-  justify-content: center;   /* horizontal center */
+  align-items: center;
+  justify-content: center;
   margin: 0 auto 0.5rem;
   box-shadow: 0 1px 4px rgba(0,0,0,0.1);
   line-height: 0;
 }
-/* Scale and perfectly center the image */
 .footer-logo {
   display: block;
   max-width: 80%;
@@ -173,33 +168,25 @@ footer {
 
 /* ====== RESPONSIVE ====== */
 @media (max-width: 768px) {
-  .nav-toggle {
-    display: block;
-  }
+  .nav-toggle { display: block; }
   .nav-links {
-    position: absolute; top: 70px; right: 0; background: #fff;
-    flex-direction: column; width: 200px;
+    position: fixed;
+    top: 70px;
+    right: 0;
+    background: #fff;
+    flex-direction: column;
+    width: 200px;
+    height: calc(100% - 70px);
+    padding-top: 1rem;
     transform: translateX(100%);
     transition: transform .3s ease;
+    box-shadow: -2px 0 5px rgba(0,0,0,0.2);
   }
   .nav-links.open { transform: translateX(0); }
 }
 
 /* ====== EXTRA STYLES ====== */
-#team .card img {
-  height: 300px;
-  width: auto;
-}
-#team .card h4,
-#team .card h5 {
-  color: var(--blue);
-}
-/* Sub-page hero logo half-size */
-.subpage-hero .hero-logo-circle {
-  width: 200px;
-  height: 200px;
-}
-.subpage-hero .hero-logo {
-  max-width: 70%;
-  max-height: 70%;
-}
+#team .card img { height: 300px; width: auto; }
+#team .card h4, #team .card h5 { color: var(--blue); }
+.subpage-hero .hero-logo-circle { width: 200px; height: 200px; }
+.subpage-hero .hero-logo { max-width: 70%; max-height: 70%; }
