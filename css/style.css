@@ -29,9 +29,16 @@ p { margin-bottom: 1rem; }
 .nav-links {
   list-style: none; display: flex; gap: 1rem;
 }
+/* ====== NAV LINKS ====== */
 .nav-links li a {
-  text-decoration: none; color: var(--blue); font-weight: 600;
+  display: block;           /* make <a> fill its container */
+  padding: 1rem;            /* give it some breathing room */
+  text-align: center;       /* center the text */
+  text-decoration: none;
+  color: var(--blue);
+  font-weight: 600;
 }
+/* CTA button in navbar */
 .btn-cta {
   padding: .5rem 1rem;
   background: #fff;
@@ -39,17 +46,33 @@ p { margin-bottom: 1rem; }
   border: 2px solid var(--blue);
   border-radius: var(--radius);
 }
+
+/* ====== HAMBURGER BUTTON (MOBILE) ====== */
 .nav-toggle {
-  background: none; border: none; display: none;
+  background: none;
+  border: none;
+  display: none;      /* only shown via media query */
+  cursor: pointer;    /* ensure clickable */
+  z-index: 20;        /* above nav-links */
 }
 .hamburger,
 .hamburger::before,
 .hamburger::after {
-  width: 25px; height: 3px; background: var(--blue);
-  display: block; position: relative; transition: .3s;
+  width: 25px;
+  height: 3px;
+  background: var(--blue);
+  display: block;
+  position: relative;
+  transition: .3s ease;
 }
-.hamburger::before { content: ""; position: absolute; top: -8px; }
-.hamburger::after  { content: ""; position: absolute; top:  8px; }
+.hamburger::before,
+.hamburger::after {
+  content: "";
+  position: absolute;
+  left: 0;            /* align bars flush */
+}
+.hamburger::before { top: -8px; }
+.hamburger::after  { top:  8px; }
 
 /* ====== HERO ====== */
 .hero { background: var(--light-bg); text-align: center; padding: 4rem 1rem; }
@@ -64,8 +87,8 @@ p { margin-bottom: 1rem; }
   justify-content: center;
   margin: 0 auto 1rem;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  line-height: 0;
 }
-
 /* make sure the logo scales to fit */
 .hero-logo-circle .hero-logo {
   max-width: 70%;
@@ -126,8 +149,6 @@ p { margin-bottom: 1rem; }
 footer {
   background: var(--dark); color: #fff; padding: 1.5rem 0; text-align: center;
 }
-.footer-content img { height: 30px; margin-bottom: .5rem; }
-
 /* Footer logo circle */
 .footer-logo-circle {
   width: 80px;
@@ -139,50 +160,46 @@ footer {
   justify-content: center;   /* horizontal center */
   margin: 0 auto 0.5rem;
   box-shadow: 0 1px 4px rgba(0,0,0,0.1);
-  line-height: 0;            /* remove any inline-image extra space */
+  line-height: 0;
 }
-
 /* Scale and perfectly center the image */
 .footer-logo {
-  display: block;            /* eliminate inline quirks */
+  display: block;
   max-width: 80%;
   max-height: 80%;
   object-fit: contain;
-  margin: auto;              /* center within flex if any extra space */
-  transform: translateY(-60%) translateX(5%);
+  margin: auto;
 }
 
 /* ====== RESPONSIVE ====== */
 @media (max-width: 768px) {
+  .nav-toggle {
+    display: block;
+  }
   .nav-links {
     position: absolute; top: 70px; right: 0; background: #fff;
-    flex-direction: column; width: 200px; transform: translateX(100%);
+    flex-direction: column; width: 200px;
+    transform: translateX(100%);
     transition: transform .3s ease;
   }
   .nav-links.open { transform: translateX(0); }
-  .nav-toggle { display: block; }
 }
 
+/* ====== EXTRA STYLES ====== */
 #team .card img {
-  height: 300px;   /* 3× the original 50px */
+  height: 300px;
   width: auto;
-  /* margin-bottom is already set by .why-choose .card img */
 }
-
 #team .card h4,
 #team .card h5 {
   color: var(--blue);
 }
-
 /* Sub-page hero logo half-size */
 .subpage-hero .hero-logo-circle {
-  width: 200px;    /* half of the 400px on the main page */
+  width: 200px;
   height: 200px;
 }
-
 .subpage-hero .hero-logo {
-  max-width: 70%;  /* preserves your existing scaling inside the smaller circle */
+  max-width: 70%;
   max-height: 70%;
 }
-
-
