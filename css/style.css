@@ -166,9 +166,16 @@ footer {
   margin: auto;
 }
 
-/* ====== RESPONSIVE ====== */
+.mission-vision-grid {
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
 @media (max-width: 768px) {
-  .nav-toggle { display: block; }
+  .nav-toggle {
+    display: block;
+  }
   .nav-links {
     position: fixed;
     top: 70px;
@@ -182,8 +189,30 @@ footer {
     transition: transform .3s ease;
     box-shadow: -2px 0 5px rgba(0,0,0,0.2);
   }
-  .nav-links.open { transform: translateX(0); }
+  .nav-links.open {
+    transform: translateX(0);
+  }
+
+  /* Mission & Vision Section single-column stacking */
+  .mission-vision-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Founders sections image/text stacking vertically */
+  #founder .card, 
+  #founder-2 .card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  /* Founders image resizing for mobile */
+  #founder .card img, 
+  #founder-2 .card img {
+    width: 150px;
+    margin-bottom: 1rem;
+  }
 }
+
 
 /* ====== EXTRA STYLES ====== */
 #team .card img { height: 300px; width: auto; }
