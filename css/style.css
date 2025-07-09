@@ -76,8 +76,8 @@ p { margin-bottom: 1rem; }
 /* ====== HERO ====== */
 .hero { background: var(--light-bg); text-align: center; padding: 4rem 1rem; }
 .hero-logo-circle {
-  width: 400px;
-  height: 400px;
+  width: 350px;
+  height: 350px;
   background: #fff;
   border-radius: 50%;
   display: flex;
