@@ -239,7 +239,7 @@ footer {
   max-height: 80%;
   object-fit: contain;
   margin: auto;
-  transform: translateY(-60%) translateX(5%);
+  transform: translateY(-10%) translateX(5%);
 }
 
 /* ====== SECTION BOX (Mission/Vision & History) ====== */
