@@ -207,8 +207,8 @@ p {
   transition: background 0.2s;
 }
 .link-card img {
-  width: 40px;
-  height: 40px;
+  width: 80px;
+  height: 80px;
 }
 .link-card:hover {
   background: var(--light-bg);
@@ -239,7 +239,7 @@ footer {
   max-height: 80%;
   object-fit: contain;
   margin: auto;
-  transform: translateY(-10%) translateX(5%);
+  transform: translateY(-00%) translateX(5%);
 }
 
 /* ====== SECTION BOX (Mission/Vision & History) ====== */
