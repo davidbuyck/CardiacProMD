@@ -345,3 +345,19 @@ footer {
 #team .card h5 {
   color: var(--blue);
 }
+
+.founder-btn {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.6rem 1.2rem;
+  background-color: var(--blue);
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: var(--radius);
+  transition: background-color 0.3s ease;
+}
+
+.founder-btn:hover {
+  background-color:  #2083f3;
+}
